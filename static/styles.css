@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#uploadSection, #jobRoleSection, #chatSection {
+    margin: 20px;
+}
+
+#chatBox {
+    width: 80%;
+    height: 1000px; /* Doubled height */
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+}
+
+.agent-message {
+    text-align: left;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.user-message {
+    text-align: right;
+    background-color: #d1e7dd;
+    border: 1px solid #a8dadc;
+    margin-left: auto;
+}
+
+
+.message {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.agent-message {
+    text-align: left;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.user-message {
+    text-align: right;
+    background-color: #d1e7dd;
+    border: 1px solid #a8dadc;
+    margin-left: auto;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+}
