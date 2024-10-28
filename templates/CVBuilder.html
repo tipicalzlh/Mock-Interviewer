@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Interview</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Mock Interview Assistant</h1>
+    <div id="uploadSection">
+        <p>Upload your CV to start the mock interview!</p>
+        <input type="file" id="cvUpload" accept=".pdf,.doc,.docx">
+        <button onclick="startInterview()">Start Interview</button>
+    </div>
+    
+<div id="jobRoleSection" style="display: none;">
+    <h2>Select a Job Role:</h2>
+    <input type="text" id="jobRoleInput" list="jobRolesList" placeholder="Enter or select a job role...">
+    <datalist id="jobRolesList">
+        <!-- Technology & Engineering -->
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="Data Scientist">Data Scientist</option>
+        <option value="AI/ML Engineer">AI/ML Engineer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+        <option value="Cloud Architect">Cloud Architect</option>
+        <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+        <option value="Network Engineer">Network Engineer</option>
+        <option value="Blockchain Developer">Blockchain Developer</option>
+        <option value="Embedded Systems Engineer">Embedded Systems Engineer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Database Administrator">Database Administrator</option>
+        <option value="Quality Assurance Engineer">Quality Assurance Engineer</option>
+
+        <!-- Product & Design -->
+        <option value="Product Manager">Product Manager</option>
+        <option value="UI/UX Designer">UI/UX Designer</option>
+        <option value="Product Designer">Product Designer</option>
+        <option value="Graphic Designer">Graphic Designer</option>
+        <option value="Industrial Designer">Industrial Designer</option>
+        <option value="User Researcher">User Researcher</option>
+        <option value="Game Designer">Game Designer</option>
+        <option value="Interaction Designer">Interaction Designer</option>
+        <option value="Creative Director">Creative Director</option>
+
+        <!-- Business & Management -->
+        <option value="Project Manager">Project Manager</option>
+        <option value="Business Analyst">Business Analyst</option>
+        <option value="Operations Manager">Operations Manager</option>
+        <option value="Financial Analyst">Financial Analyst</option>
+        <option value="Marketing Specialist">Marketing Specialist</option>
+        <option value="HR Specialist">HR Specialist</option>
+        <option value="Sales Operations Manager">Sales Operations Manager</option>
+        <option value="Chief Executive Officer">Chief Executive Officer</option>
+        <option value="Chief Financial Officer">Chief Financial Officer</option>
+        <option value="Consultant">Consultant</option>
+        <option value="Entrepreneur">Entrepreneur</option>
+
+        <!-- Science & Research -->
+        <option value="Research Scientist">Research Scientist</option>
+        <option value="Biostatistician">Biostatistician</option>
+        <option value="Clinical Research Coordinator">Clinical Research Coordinator</option>
+        <option value="Chemist">Chemist</option>
+        <option value="Physicist">Physicist</option>
+        <option value="Environmental Scientist">Environmental Scientist</option>
+        <option value="Geologist">Geologist</option>
+        <option value="Astrophysicist">Astrophysicist</option>
+        <option value="Biomedical Engineer">Biomedical Engineer</option>
+        <option value="Nanotechnologist">Nanotechnologist</option>
+
+        <!-- Healthcare & Life Sciences -->
+        <option value="Doctor">Doctor</option>
+        <option value="Nurse">Nurse</option>
+        <option value="Pharmacist">Pharmacist</option>
+        <option value="Medical Lab Technician">Medical Lab Technician</option>
+        <option value="Dentist">Dentist</option>
+        <option value="Physician Assistant">Physician Assistant</option>
+        <option value="Occupational Therapist">Occupational Therapist</option>
+        <option value="Radiologist">Radiologist</option>
+        <option value="Optometrist">Optometrist</option>
+        <option value="Nutritionist">Nutritionist</option>
+
+        <!-- Education & Academia -->
+        <option value="University Professor">University Professor</option>
+        <option value="Academic Researcher">Academic Researcher</option>
+        <option value="School Teacher">School Teacher</option>
+        <option value="Educational Consultant">Educational Consultant</option>
+        <option value="Librarian">Librarian</option>
+        <option value="Instructional Designer">Instructional Designer</option>
+        <option value="Curriculum Developer">Curriculum Developer</option>
+        <option value="Principal">Principal</option>
+        <option value="Training Specialist">Training Specialist</option>
+
+        <!-- Sales & Customer Relations -->
+        <option value="Sales Manager">Sales Manager</option>
+        <option value="Customer Success Manager">Customer Success Manager</option>
+        <option value="Account Manager">Account Manager</option>
+        <option value="Business Development Executive">Business Development Executive</option>
+        <option value="Retail Store Manager">Retail Store Manager</option>
+        <option value="Sales Engineer">Sales Engineer</option>
+        <option value="Key Account Manager">Key Account Manager</option>
+        <option value="Client Relationship Manager">Client Relationship Manager</option>
+        <option value="Inside Sales Representative">Inside Sales Representative</option>
+
+        <!-- Arts & Entertainment -->
+        <option value="Actor">Actor</option>
+        <option value="Musician">Musician</option>
+        <option value="Film Director">Film Director</option>
+        <option value="Animator">Animator</option>
+        <option value="Photographer">Photographer</option>
+        <option value="Choreographer">Choreographer</option>
+        <option value="Sound Designer">Sound Designer</option>
+        <option value="Art Director">Art Director</option>
+        <option value="Voice Actor">Voice Actor</option>
+        <option value="Stage Manager">Stage Manager</option>
+
+        <!-- Law & Government -->
+        <option value="Lawyer">Lawyer</option>
+        <option value="Paralegal">Paralegal</option>
+        <option value="Policy Analyst">Policy Analyst</option>
+        <option value="Diplomat">Diplomat</option>
+        <option value="Urban Planner">Urban Planner</option>
+        <option value="Intelligence Analyst">Intelligence Analyst</option>
+        <option value="Public Affairs Specialist">Public Affairs Specialist</option>
+        <option value="Legislative Assistant">Legislative Assistant</option>
+        <option value="Criminal Investigator">Criminal Investigator</option>
+        <option value="Immigration Officer">Immigration Officer</option>
+
+        <!-- Skilled Trades -->
+        <option value="Electrician">Electrician</option>
+        <option value="Plumber">Plumber</option>
+        <option value="Carpenter">Carpenter</option>
+        <option value="Mechanic">Mechanic</option>
+        <option value="Welder">Welder</option>
+        <option value="HVAC Technician">HVAC Technician</option>
+        <option value="Mason">Mason</option>
+        <option value="Heavy Equipment Operator">Heavy Equipment Operator</option>
+        <option value="Machinist">Machinist</option>
+        <option value="Boilermaker">Boilermaker</option>
+
+        <!-- Media & Communications -->
+        <option value="Journalist">Journalist</option>
+        <option value="Content Writer">Content Writer</option>
+        <option value="Social Media Manager">Social Media Manager</option>
+        <option value="Public Relations Specialist">Public Relations Specialist</option>
+        <option value="Video Editor">Video Editor</option>
+        <option value="Copywriter">Copywriter</option>
+        <option value="Broadcast Technician">Broadcast Technician</option>
+        <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+        <option value="Photojournalist">Photojournalist</option>
+        <option value="Podcast Producer">Podcast Producer</option>
+
+        <!-- Logistics & Supply Chain -->
+        <option value="Logistics Manager">Logistics Manager</option>
+        <option value="Warehouse Manager">Warehouse Manager</option>
+        <option value="Supply Chain Analyst">Supply Chain Analyst</option>
+        <option value="Fleet Manager">Fleet Manager</option>
+        <option value="Inventory Control Specialist">Inventory Control Specialist</option>
+        <option value="Import/Export Specialist">Import/Export Specialist</option>
+        <option value="Logistics Coordinator">Logistics Coordinator</option>
+        <option value="Supply Chain Manager">Supply Chain Manager</option>
+        <option value="Transportation Planner">Transportation Planner</option>
+        <option value="Customs Broker">Customs Broker</option>
+
+
+
+    </datalist>
+    <button onclick="chooseJobRole()">Continue</button>
+</div>
+
+    
+
+    <div id="chatSection" style="display: none;">
+        <h2>Chat with Interviewer</h2>
+        <div id="chatBox"></div>
+        <textarea id="messageInput" placeholder="Type your response here..." onkeydown="handleKeyPress(event)"></textarea>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
